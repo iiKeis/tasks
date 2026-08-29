@@ -15,7 +15,19 @@
 
 .App-header {
     width: 100%;
-    background-color: #282c34;
+    background-color: #2A6478;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.Header-second {
+    width: 100%;
+    background-color: #2b0acd;
     min-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -28,6 +40,19 @@
 .App-link {
     color: #61dafb;
 }
+
+/* .rectangle{
+    width: 150px;
+    height: 250px;
+    background-color: red;
+}
+
+.rectangle2{
+    width: 150px;
+    height: 250px;
+    background-color: red;
+} */
+
 
 @keyframes App-logo-spin {
     from {
