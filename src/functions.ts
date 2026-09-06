@@ -4,7 +4,7 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return  (temperature - 32) * 5/9;
+    return ((temperature - 32) * 5) / 9;
 }
 
 /**
@@ -15,14 +15,14 @@ export function add3(first: number, second: number, third: number): number {
     //need to find a way that only adds a number if it is positive if not, do not add
 
     let sum = 0;
-    if(first > 0){
-        sum += first
+    if (first > 0) {
+        sum += first;
     }
-    if(second > 0){
-        sum += second
+    if (second > 0) {
+        sum += second;
     }
-     if(third > 0){
-        sum += third
+    if (third > 0) {
+        sum += third;
     }
     return sum;
 }
@@ -33,8 +33,6 @@ export function add3(first: number, second: number, third: number): number {
  */
 export function shout(message: string): string {
     return message.toUpperCase() + "!";
-
-
 }
 
 /**
@@ -42,7 +40,6 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-
     return message.endsWith("?") ? true : false;
     //or message.slice(-1);
 }
@@ -53,16 +50,11 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    if(word.toUpperCase() == "YES" || word == "yes"){
+    if (word.toUpperCase() == "YES" || word == "yes") {
         return true;
-    }
-
-    else if(word.toUpperCase() == "NO" || word == "no"){
+    } else if (word.toUpperCase() == "NO" || word == "no") {
         return false;
-    }
-
-    else{
+    } else {
         return null;
     }
-
 }
