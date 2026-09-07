@@ -177,7 +177,9 @@ export function injectPositive(values: number[]): number[] {
     //clone
     const valuesInside = [...values];
 
-    const firstNegNumIndex = valuesInside.findIndex((value: number): boolean => value < 0,);
+    const firstNegNumIndex = valuesInside.findIndex(
+        (value: number): boolean => value < 0,
+    );
 
     //Get the array of numbers before the first negative number
     //Sliced Array: [1,2,-3] -> [1,2]
