@@ -1,25 +1,29 @@
 import React from "react";
 import "./App.css";
-<<<<<<< HEAD
-import { Button, Col, Container, Row } from "react-bootstrap";
-=======
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
->>>>>>> upstream/task-state
+import { Button } from "react-bootstrap";
+import headerImage from "./assets/images/0131a0cd-af0d-466a-939a-9496978c24b2-Photoroom.png";
 
 function App(): React.JSX.Element {
     return (
         <div className="App">
             <header className="App-header" style={{ color: "black" }}>
-                UD CISC275 with React Hooks and TypeScript
+                <h1>UD CISC275 with React Hooks and TypeScript</h1>
+                <img
+                    src={headerImage}
+                    sizes="100px"
+                    alt="Header Banner Logo"
+                    style={{ width: "200px", height: "  200px" }}
+                />
                 <p>
                     Edit <code>src/App.tsx</code> and save. This page will
                     automatically reload. This page was created wonderfully by
-                    yours truly! Ikechukwu Ogbonnia. With that give a warm,
+                    yours truly! Ikechukwu Ogbonnia. With that, give a warm
                     welcome! Hello World
                 </p>
                 <Button
@@ -36,10 +40,6 @@ function App(): React.JSX.Element {
                 >
                     Log Hello World
                 </Button>
-                {/* <Button>
-                onClick = {() => a}
-            </Button> */}
-                {/*Im going to make a button that changes the site color, FOR NO REASON!!!!!!*/}
                 <div>
                     <ul>
                         <li>Bullet One</li>
@@ -48,65 +48,24 @@ function App(): React.JSX.Element {
                     </ul>
                 </div>
                 <div>
-                    This is <span style={{ color: "red" }}> text</span>
+                    This box has a{" "}
+                    <span style={{ backgroundColor: "red" }}>
+                        red background!
+                    </span>
                 </div>
             </header>
-<<<<<<< HEAD
-
-            <h1 style={{ color: "pink" }}> This is the second header</h1>
-
-            <Container>
-                <Row>
-                    <div
-                        style={{
-                            width: 250,
-                            height: 350,
-                            backgroundColor: "red",
-                        }}
-                    >
-                        <Col>
-                            Ikes First column. What else can I put in here?
-                        </Col>
-                    </div>
-
-                    <div
-                        style={{
-                            width: 250,
-                            height: 350,
-                            backgroundColor: "red",
-                        }}
-                    >
-                        <Col>
-                            This is Pythwins Rectangle! There are many like it
-                            but this one belong to my BOY! We can call it shiny
-                        </Col>
-                        This is Pythwins Rectangle! There are many like it but
-                        this one belong to my BOY! We can call it shiny
-                    </div>
-
-                    <img
-                        src="./assets/images/0131a0cd-af0d-466a-939a-9496978c24b2-Photoroom.png"
-                        alt="Pytwin!!"
-                    />
-
-                    {/* <div className="rectangle2"> */}
-                    {/* </div> */}
-                </Row>
-            </Container>
-=======
-            <hr></hr>
-            <Counter></Counter>
             <hr />
-            <RevealAnswer></RevealAnswer>
+            <Counter />
             <hr />
-            <StartAttempt></StartAttempt>
+            <RevealAnswer />
             <hr />
-            <TwoDice></TwoDice>
+            <StartAttempt />
             <hr />
-            <ChangeType></ChangeType>
+            <TwoDice />
             <hr />
-            <CycleHoliday></CycleHoliday>
->>>>>>> upstream/task-state
+            <ChangeType />
+            <hr />
+            <CycleHoliday />
         </div>
     );
 }
