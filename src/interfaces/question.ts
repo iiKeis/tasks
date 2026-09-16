@@ -4,7 +4,7 @@ export type QuestionType = "multiple_choice_question" | "short_answer_question";
 /** A representation of a Question in a quizzing application */
 export interface Question {
     /** A unique identifier for the question */
-    id: number;
+    id: number;//hi
     /** The human-friendly title of the question */
     name: string;
     /** The instructions and content of the Question */
