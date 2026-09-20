@@ -32,7 +32,7 @@
                 "endOfLine": "auto"
             }
         ],
-        "no-extra-parens": [
+                "no-extra-parens": [
             "warn",
             "all",
             {
