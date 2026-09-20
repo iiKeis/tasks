@@ -14,29 +14,35 @@ export function ChooseTeam(): React.JSX.Element {
     const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
-        /*
-        if (!team.includes(newMember)) {
-            team.push(newMember);
+    function chooseMember(option: string) {
+        if (!team.includes(option)) {
+            setTeam([...team, option]);
         }
-        */
+        setAllOptions(allOptions);
     }
 
     function clearTeam() {
-        /*
-        team = [];
-        */
+        setTeam([]);
     }
+
+    //to pass something in directly use {() => function(parameter)}
 
     return (
         <div>
-            <h3>Choose Team</h3>
+            <div>
+                <strong>Choose Team</strong>
+            </div>
             <Row>
                 <Col>
                     {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                onClick={() => {
+                                    chooseMember(option);
+                                }}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>
