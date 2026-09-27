@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
-
-export function MultipleChoiceQuestion({options,expectedAnswer,}: {options: string[];expectedAnswer: string;}): React.JSX.Element {
+export function MultipleChoiceQuestion({
+    options,
+    expectedAnswer,
+}: {
+    options: string[];
+    expectedAnswer: string;
+}): React.JSX.Element {
     const [userAnswer, setUserAnswer] = useState<string>(options[0]);
 
-    function updateUserAnswer(event: React.ChangeEvent<HTMLSelectElement>){
+    function updateUserAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
         setUserAnswer(event.target.value);
     }
-
 
     //What is the difference between having options and expected answer as parameters vs. object parameters
     //Know how to render with a map using forms
@@ -16,19 +20,19 @@ export function MultipleChoiceQuestion({options,expectedAnswer,}: {options: stri
         <div>
             <Form.Group controlId="userOption">
                 <Form.Label>What is your answer?</Form.Label>
-                <Form.Select value = {userAnswer} onChange={updateUserAnswer}>
-                    {options.map((opt: string, index: number) => <option value={opt} key={index}>{opt}</option>)}
+                <Form.Select value={userAnswer} onChange={updateUserAnswer}>
+                    {options.map((opt: string, index: number) => (
+                        <option value={opt} key={index}>
+                            {opt}
+                        </option>
+                    ))}
                 </Form.Select>
             </Form.Group>
-            {userAnswer === expectedAnswer ? <p>✔️</p> : <p>❌</p>}
+            {userAnswer === expectedAnswer ?
+                <p>✔️</p>
+            :   <p>❌</p>}
         </div>
-    )
-
-
-
-
-
-
+    );
 
     // const [givenAnswer, setGivenAnswer] = useState<string>(options[0])
 
@@ -36,15 +40,12 @@ export function MultipleChoiceQuestion({options,expectedAnswer,}: {options: stri
     //     setGivenAnswer(event.target.value);
     // }
 
-
     // return (
-
 
     //     <div>
     //         <h3>Multiple Choice Question</h3>
     //         <div>
     //         {options.map((o) => (
-
 
     //         <Form.Group controlId = "userAnswer">
     //             <Form.Label>What color is the sky?</Form.Label>
@@ -59,7 +60,6 @@ export function MultipleChoiceQuestion({options,expectedAnswer,}: {options: stri
     //             <div>
     //                 {givenAnswer} === {expectedAnswer} ? ✔️ : ❌
     //             </div>
-
 
     //     </div>
     // );

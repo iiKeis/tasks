@@ -1,52 +1,55 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
-
 export function ChangeColor(): React.JSX.Element {
     //colors state
     const [color, setColors] = useState<string>("");
-    const myColors: string[] =["red","orange","yellow","green","blue","purple","pink","teal"];
+    const myColors: string[] = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "teal",
+    ];
 
-    function updateColor(event: React.ChangeEvent<HTMLInputElement>){
-        setColors(event.target.value)
+    function updateColor(event: React.ChangeEvent<HTMLInputElement>) {
+        setColors(event.target.value);
     }
-
 
     return (
         <div>
             <div>Change Color</div>
             <div>
-
-
-
-                  {myColors.map((c) => (
-
+                {myColors.map((c) => (
                     <Form.Check
-
-                        style={{backgroundColor: c}}
+                        style={{ backgroundColor: c }}
                         inline
-                        key = {c}
+                        key={c}
                         type="radio"
                         name="colors"
                         onChange={updateColor}
                         id={c}
-                        label = {c}
+                        label={c}
                         value={c}
-                        checked = {color === c}
+                        checked={color === c}
                     />
-                  ))}
-                  <div>
-                    <span style={{ backgroundColor: color }}> The current color is: {color}</span>
-                  </div>
+                ))}
+                <div>
+                    <span style={{ backgroundColor: color }}>
+                        {" "}
+                        The current color is: {color}
+                    </span>
+                </div>
 
                 <div>
                     <strong>Colored Box</strong>
                 </div>
                 <span>Box: {color}</span>
 
-
-
-                    <div
+                <div
                     data-testid="colored-box"
                     style={{
                         width: "50px",
@@ -60,18 +63,13 @@ export function ChangeColor(): React.JSX.Element {
                     {color}
                 </div>
 
-
-
-
-            {/* <div>
+                {/* <div>
                 {color.map((c =>))}
             </div> */}
 
-            {/* <div>Your current color is {color}</div>
+                {/* <div>Your current color is {color}</div>
             <div> Your color is <span style={{ backgroundColor: "red" }}>red background!</span></div> */}
-
             </div>
-
         </div>
     );
 }

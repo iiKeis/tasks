@@ -15,26 +15,36 @@ export function GiveAttempts(): React.JSX.Element {
     const [attemptsLeft, setAttemptsLeft] = useState<number>(3);
     const [attemptsRequested, setAttemptsRequested] = useState<number>(0);
 
-
-
     return (
         <div>
             <div>Give Attempts</div>
             <div>Attemps left are: {attemptsLeft}</div>
             <Form.Group controlId="requested-attempts">
-            <Form.Label>Request Attempts: </Form.Label>
-            <Form.Control
-                type="number"
-                value={attemptsRequested}
-                onChange= {(e) => {setAttemptsRequested(parseInt(e.target.value) || 0)}}
-            />
+                <Form.Label>Request Attempts: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={attemptsRequested}
+                    onChange={(e) => {
+                        setAttemptsRequested(parseInt(e.target.value) || 0);
+                    }}
+                />
             </Form.Group>
 
-            <button onClick = {() => {setAttemptsLeft(attemptsLeft - 1) }} disabled = {attemptsLeft === 0}>use
+            <button
+                onClick={() => {
+                    setAttemptsLeft(attemptsLeft - 1);
+                }}
+                disabled={attemptsLeft === 0}
+            >
+                use
             </button>
 
-            <button onClick={() => {setAttemptsLeft(attemptsLeft + attemptsRequested)}}>gain
-
+            <button
+                onClick={() => {
+                    setAttemptsLeft(attemptsLeft + attemptsRequested);
+                }}
+            >
+                gain
             </button>
         </div>
     );
